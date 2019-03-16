@@ -3,7 +3,7 @@ LABEL maintainer="Alireza <alireza@amouzadeh.net>"
 
 # Install go git make as root
 USER root
-RUN apk add --no-cache git make go
+RUN apk add --no-cache git make go libc-dev
 
 # Configure Go
 ENV GOROOT /usr/lib/go
@@ -16,4 +16,6 @@ RUN go get github.com/boltdb/bolt && go get github.com/juju/ratelimit && go get 
 RUN mkdir -p ${GOPATH}/github.com/cbeuw
 WORKDIR ${GOPATH}/github.com/cbeuw
 RUN git clone https://github.com/cbeuw/Cloak.git
+WORKDIR ${GOPATH}/github.com/cbeuw/Cloak
 RUN make server && make client
+CMD ["ss-server", "-c" , "/config/ss.json"]
