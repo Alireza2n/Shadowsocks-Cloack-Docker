@@ -16,6 +16,6 @@
     "dscp":"EF",
     "no-delay":true,
     "plugin":"/go/github.com/cbeuw/Cloak/build/ck-server",
-    "plugin_opts":"/go/github.com/cbeuw/Cloak/config/ckserver.json"
+    "plugin_opts":"/config/ck.json"
 }
 

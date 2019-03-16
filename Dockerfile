@@ -18,4 +18,4 @@ WORKDIR ${GOPATH}/github.com/cbeuw
 RUN git clone https://github.com/cbeuw/Cloak.git
 WORKDIR ${GOPATH}/github.com/cbeuw/Cloak
 RUN make server && make client
-CMD ["ss-server", "-c" , "/config/ss.json"]
+CMD ["ss-server", "-u", "-c" , "/config/ss.json"]
